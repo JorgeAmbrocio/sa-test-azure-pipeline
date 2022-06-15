@@ -18,6 +18,7 @@ steps:
     git clone https://$(token)@github.com/JorgeAmbrocio/sa-test-azure-pipeline.git
   displayName: 'clonning repository'
 - script: |
+    cd sa-test-azure-pipeline
     npm install
     npm test
   displayName: 'run install modules and test'
