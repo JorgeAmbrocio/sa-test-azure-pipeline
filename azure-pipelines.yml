@@ -12,6 +12,12 @@ pool:
     - agent.name -equals sacharla
 
 steps:
+- task: DownloadGitHubRelease@0
+  inputs:
+    connection: 'JorgeAmbrocio'
+    userRepository: 'https://github.com/JorgeAmbrocio/sa-test-azure-pipeline.git'
+    defaultVersionType: 'latest'
+    downloadPath: '$(System.ArtifactsDirectory)'
 - script: |
     npm install
     npm test
