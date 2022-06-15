@@ -15,6 +15,9 @@ steps:
 - checkout: self
   persistCredentials: true
 - script: |
+    git clone https://$(token)@github.com/JorgeAmbrocio/sa-test-azure-pipeline.git
+  displayName: 'clonning repository'
+- script: |
     npm install
     npm test
   displayName: 'run install modules and test'
