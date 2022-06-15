@@ -36,7 +36,7 @@ app.use('/multiplica/:numeroa/:numerob', (req, res) => {
 
 // endpoint para probar la funcionalidad del servidor
 app.use('/', (_req, res) => {
-    res.status(200).json({'msj':'servidor funcionando antes de la charla'})
+    res.status(200).json({'msj':'servidor funcionando luego de la conferencia de sa, saludos '})
 })
 
 app.listen(
