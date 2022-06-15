@@ -22,7 +22,15 @@ steps:
     npm install
     npm test
   displayName: 'run install modules and test'
+- script:  |
+    docker rm -f satest
+    docker rmi satesti
+  displayName: 'remove container and image'
+  continueOnError: true
 - script: |
     cd sa-test-azure-pipeline/server
-    node index.js
-  displayName: 'running server'
+    docker build -t satesti .
+  displayName: 'build container'
+- script: |
+    docker run -d -p 3211:3210 --name satest satesti
+  displayName: 'run container'
