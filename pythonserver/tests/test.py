@@ -19,5 +19,21 @@ class UsersTest(unittest.TestCase):
         response = self.client.get('/resta/1/1')
         self.assertEqual(response.status_code,200)
 
+    def test_no_hacer_resta(self):
+        print("error restando")
+        response = self.client.get('/resta/hola/adios')
+        self.assertEqual(response.status_code,400)
+
+    def test_hacer_division(self):
+        print("dividiendo")
+        response = self.client.get('/division/1/1')
+        self.assertEqual(response.status_code,200)
+    
+    def test_no_hacer_division(self):
+        print("error dividiendo")
+        response = self.client.get('/division/hola/mundo')
+        self.assertEqual(response.status_code,400)
+    
+
 if __name__ == '__main__':
     unittest.main()
