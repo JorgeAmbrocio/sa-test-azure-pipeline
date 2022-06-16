@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --exit"
+    "test": "nyc --reporter=lcov --reporter=text-lcov mocha --exit"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +13,7 @@
     "chai-http": "^4.3.0",
     "cors": "^2.8.5",
     "express": "^4.18.1",
-    "mocha": "^10.0.0"
+    "mocha": "^10.0.0",
+    "nyc": "^15.1.0"
   }
 }
